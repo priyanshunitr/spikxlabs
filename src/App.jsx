@@ -82,12 +82,6 @@ const projects = [
   },
 ]
 
-const heroStats = [
-  '20+ launch and growth projects shipped',
-  '3x faster campaign turnaround',
-  'Websites, funnels, ads, and retention systems under one roof',
-]
-
 const aboutHighlights = [
   'Remote-first agency based in India',
   'Built for fast-moving founders and lean teams',
@@ -376,58 +370,70 @@ function FixedHero({ copied, onCopy }) {
     <section className="fixed-hero" id="top" aria-label="spikxlabs introduction">
       <div className="hero-frame">
         <main className="hero-content">
-          <div className="hero-grid">
-            <div className="hero-left">
-              <div className="hero-name" aria-label="spikxlabs">
-                <span>spikxlabs growth studio</span>
-              </div>
+          <div className="hero-kicker">
+            <span>spikxlabs growth studio</span>
+            <span>Strategy / Websites / Campaigns</span>
+          </div>
 
-              <div className="hero-message">
-                <h1>Marketing that looks sharp and sells clearly.</h1>
-                <p>
-                  We build high-converting websites, brand messaging, campaign assets, and growth systems for teams
-                  that want clean design, clear strategy, and measurable momentum.
-                </p>
-              </div>
+          <div className="hero-showcase">
+            <h1 className="hero-title" aria-label="Launch sharper marketing with spikxlabs">
+              <span className="hero-title-line">
+                <span>Launch</span>
+                <span>sharper</span>
+              </span>
+              <span className="hero-title-line">
+                <span>marketing</span>
+                <span className="hero-inline-media">
+                  <img src={appDev} alt="" />
+                </span>
+              </span>
+              <span className="hero-title-line">
+                <span>with</span>
+                <span className="hero-inline-brand">
+                  <img src={logoSrc} alt="" />
+                  spikxlabs
+                </span>
+              </span>
+            </h1>
 
-              <div className="hero-actions">
-                <a className="resume-link" href="#contact">
-                  Start Sprint
-                </a>
-                <div className="role-line">
-                  <span>hello@spikxlabs.com</span>
-                  <button className="copy-btn" type="button" onClick={onCopy} aria-label="Copy email address">
-                    <Copy size={16} />
-                  </button>
-                  <span className={`copy-note ${copied ? 'is-visible' : ''}`}>Copied</span>
-                </div>
-              </div>
-            </div>
+            <p className="hero-copy">
+              We build conversion websites, brand messaging, campaign assets, and growth systems for focused teams.
+            </p>
 
-            <div className="hero-right">
-              <div className="hero-brand-card">
-                <div className="brand-mark-hero">
-                  <img src={logoSrc} alt="spikxlabs logo" />
-                </div>
-                <p>Focused marketing systems for launches, funnels, ads, and retention.</p>
+            <div className="hero-actions">
+              <a className="resume-link" href="#contact">
+                Start Sprint
+              </a>
+              <div className="role-line">
+                <span>hello@spikxlabs.com</span>
+                <button className="copy-btn" type="button" onClick={onCopy} aria-label="Copy email address">
+                  <Copy size={16} />
+                </button>
+                <span className={`copy-note ${copied ? 'is-visible' : ''}`}>Copied</span>
               </div>
             </div>
           </div>
 
-          <div className="hero-section-row">
+          <div className="hero-card-row" aria-label="spikxlabs highlights">
+            <article className="hero-mini-card hero-mini-card-dark">
+              <span>01</span>
+              <strong>Conversion websites</strong>
+            </article>
+            <article className="hero-mini-card hero-mini-card-image">
+              <img src={fullStack} alt="" />
+              <strong>Funnels that connect the whole journey</strong>
+            </article>
+            <article className="hero-mini-card hero-mini-card-lime">
+              <span>20+</span>
+              <strong>launch and growth projects shipped</strong>
+            </article>
             <div className="social-links" aria-label="Social links">
               {socials.map(({ label, href, icon: Icon }) => (
                 <a href={href} key={label} aria-label={label}>
-                  <Icon size={24} />
+                  <Icon size={22} />
                 </a>
               ))}
             </div>
-
-            <ul className="hero-stats" aria-label="spikxlabs highlights">
-              {heroStats.map((stat) => (
-                <li key={stat}>{stat}</li>
-              ))}
-            </ul>
           </div>
         </main>
       </div>
