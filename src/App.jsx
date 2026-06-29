@@ -11,35 +11,38 @@ import renameProject from './assets/reference/reference-rename.png'
 const logoSrc = '/logo.jpg'
 
 const navItems = [
-  { label: 'About', href: '#top' },
-  { label: 'Project', href: '#project' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#project' },
+  { label: 'Process', href: '#process' },
   { label: 'Work', href: '#work' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const socials = [
   { label: 'Email', href: 'mailto:hello@spikxlabs.com', icon: Mail },
-  { label: 'Website', href: '#project', icon: Globe },
+  { label: 'Projects', href: '#project', icon: Globe },
   { label: 'Book Call', href: '#contact', icon: ArrowUpRight },
 ]
 
 const skills = [
   {
     title: 'WEB DESIGN',
-    description: 'We design and ship conversion-focused websites with clear positioning, fast pages, and sharp visual systems.',
+    description: 'We design and build fast, clean, conversion-focused websites that make your offer easy to understand and easy to act on.',
     image: appDev,
-    tags: ['Landing pages', 'Webflow/React', 'UX copy', 'Speed optimization'],
+    tags: ['Landing pages', 'Startup websites', 'Website copy', 'Responsive frontend'],
   },
   {
     title: 'GROWTH SYSTEM',
-    description: 'Scalable campaign systems built around paid acquisition, analytics, CRM flows, and repeatable testing.',
+    description: 'We create campaign systems that connect strategy, creative, landing pages, measurement, and follow-up.',
     image: fullStack,
-    tags: ['Funnels', 'Analytics', 'CRM', 'Automation', 'AI workflows'],
+    tags: ['Launch strategy', 'Lead funnels', 'Analytics', 'Performance roadmap'],
   },
   {
     title: 'BRAND CREATIVE',
-    description: 'Minimal brand direction, social campaigns, launch visuals, and content kits built for teams that move quickly.',
+    description: 'We create practical ad and content assets designed for testing, learning, and scaling across campaigns.',
     image: uiDesign,
-    tags: ['Brand strategy', 'Creative testing', 'Social assets', 'Launch kits'],
+    tags: ['Ad concepts', 'Hook libraries', 'Social systems', 'Creative testing'],
   },
 ]
 
@@ -49,31 +52,198 @@ const projects = [
   {
     title: 'LaunchPad Sprint',
     year: '2026',
-    description: 'High-converting launch page, campaign angle testing, and analytics setup for a SaaS product rollout.',
+    description: 'Built a launch-ready landing page and campaign messaging system for a B2B SaaS product preparing for market validation.',
     client: 'B2B SaaS',
     type: 'Growth',
     tags: ['Growth', 'Websites'],
     image: codeProject,
+    result: 'Improved lead clarity and gave the team a repeatable launch page for paid and organic traffic.',
+    deliverables: ['Landing page structure', 'Homepage copy', 'Campaign hooks', 'Analytics event plan'],
   },
   {
     title: 'Creator Funnel',
     year: '2025',
-    description: 'Creator-led landing funnel with paid social assets, lead magnet flow, and CRM follow-up sequence.',
+    description: 'Created a creator-led growth funnel connecting social content, lead magnets, landing pages, and follow-up emails.',
     client: 'Education Brand',
     type: 'Performance',
     tags: ['Performance', 'Brand'],
     image: prepProject,
+    result: 'Helped the brand convert content attention into qualified leads and warmer sales conversations.',
+    deliverables: ['Lead magnet landing page', 'Short-form content hooks', 'Paid ad concepts', 'Welcome email sequence'],
   },
   {
     title: 'Retention Studio',
     year: '2025',
-    description: 'Lifecycle email system, offer hierarchy, and repeat-purchase campaign kit for an ecommerce team.',
+    description: 'Built a retention-focused messaging and email system for a consumer brand that wanted more repeat purchases.',
     client: 'D2C Team',
     type: 'Brand',
     tags: ['Growth', 'Brand'],
     image: renameProject,
+    result: 'Created a repeatable campaign calendar and improved customer follow-up consistency.',
+    deliverables: ['Customer segment mapping', 'Email campaign themes', 'Promotional copy', 'Re-engagement sequence'],
   },
 ]
+
+const heroStats = [
+  '20+ launch and growth projects shipped',
+  '3x faster campaign turnaround',
+  'Websites, funnels, ads, and retention systems under one roof',
+]
+
+const aboutHighlights = [
+  'Remote-first agency based in India',
+  'Built for fast-moving founders and lean teams',
+  'Strong focus on clean design, clear copy, and practical execution',
+  'Flexible sprint model for launches, campaigns, and ongoing growth',
+]
+
+const serviceDetails = [
+  {
+    title: 'Website Design and Development',
+    copy: 'We design and build fast, clean, conversion-focused websites that make your offer easy to understand and easy to act on.',
+    includes: [
+      'Landing pages',
+      'Startup websites',
+      'Service business websites',
+      'Campaign microsites',
+      'Website copy structure',
+      'Responsive frontend development',
+      'Conversion-focused page sections',
+    ],
+    bestFor: 'Founders and teams that need a sharp website for launches, lead generation, product validation, or brand credibility.',
+  },
+  {
+    title: 'Brand Messaging and Positioning',
+    copy: 'We clarify what you sell, who it is for, why it matters, and how your brand should speak across every channel.',
+    includes: [
+      'Offer positioning',
+      'Homepage messaging',
+      'Value proposition writing',
+      'Brand voice direction',
+      'Taglines and campaign hooks',
+      'Audience and pain-point mapping',
+      'Competitor angle review',
+    ],
+    bestFor: 'Businesses that have a good product or service but struggle to explain it simply and persuasively.',
+  },
+  {
+    title: 'Growth Campaigns',
+    copy: 'We create campaign systems that connect strategy, creative, landing pages, and measurement.',
+    includes: [
+      'Launch strategy',
+      'Paid social campaign angles',
+      'Ad creative direction',
+      'Lead generation funnels',
+      'Campaign landing pages',
+      'Analytics and tracking setup',
+      'Performance testing roadmap',
+    ],
+    bestFor: 'Brands that want a structured campaign instead of disconnected ads, posts, and pages.',
+  },
+  {
+    title: 'Performance Creative',
+    copy: 'We create practical ad and content assets designed for testing, learning, and scaling.',
+    includes: [
+      'Static ad concepts',
+      'Short-form video scripts',
+      'Hook libraries',
+      'Offer-led creatives',
+      'Social post systems',
+      'Creative testing matrix',
+      'Campaign refresh packs',
+    ],
+    bestFor: 'Teams running paid campaigns or organic content who need more angles, sharper messaging, and better creative consistency.',
+  },
+  {
+    title: 'Email and Retention Funnels',
+    copy: 'We help brands keep attention after the first click through email flows, nurture sequences, and lifecycle campaigns.',
+    includes: [
+      'Welcome sequences',
+      'Lead nurture emails',
+      'Abandoned inquiry follow-ups',
+      'Promotional campaign emails',
+      'Re-engagement flows',
+      'Newsletter structure',
+      'CRM-friendly copy',
+    ],
+    bestFor: 'Brands that already get traffic or leads but need better follow-up and higher conversion from existing attention.',
+  },
+]
+
+const processSteps = [
+  {
+    title: 'Diagnose',
+    copy: 'We review your offer, audience, website, funnel, competitors, and current marketing assets to identify what is unclear, missing, or slowing conversion.',
+  },
+  {
+    title: 'Shape',
+    copy: 'We define the strategy: positioning, message hierarchy, campaign angle, content structure, and the exact assets needed for the sprint.',
+  },
+  {
+    title: 'Build',
+    copy: 'We design, write, and develop the agreed deliverables, from landing pages and creative assets to email copy and brand messaging.',
+  },
+  {
+    title: 'Launch',
+    copy: 'We prepare the final assets for use, connect the handoff pieces, and give your team a clear launch checklist.',
+  },
+  {
+    title: 'Learn',
+    copy: 'We review performance signals and recommend next steps so the work can improve after launch instead of sitting still.',
+  },
+]
+
+const testimonials = [
+  {
+    quote: 'spikxlabs helped us turn a vague product idea into a clear landing page and campaign plan. The work felt sharp, fast, and easy to use.',
+    client: 'Founder, SaaS Startup',
+  },
+  {
+    quote: 'They understood the offer quickly and gave us copy, visuals, and campaign angles we could actually launch with.',
+    client: 'Growth Lead, Education Brand',
+  },
+  {
+    quote: 'The biggest value was clarity. Our website finally explains what we do without overcomplicating it.',
+    client: 'Owner, Service Business',
+  },
+]
+
+const packages = [
+  {
+    name: 'Website Sprint',
+    bestFor: 'Teams that need a polished landing page or website refresh.',
+    timeline: '1 to 2 weeks',
+    cta: 'Book Website Sprint',
+    includes: ['Strategy call', 'Page structure', 'Website copy', 'Visual direction', 'Responsive frontend build', 'Basic conversion review'],
+  },
+  {
+    name: 'Launch Sprint',
+    bestFor: 'Brands preparing to launch a product, service, campaign, or offer.',
+    timeline: '2 to 3 weeks',
+    cta: 'Book Launch Sprint',
+    includes: ['Offer positioning', 'Landing page', 'Campaign hooks', 'Creative direction', 'Email or lead follow-up copy', 'Launch checklist'],
+  },
+  {
+    name: 'Growth Partner',
+    bestFor: 'Teams that need ongoing marketing support across campaigns, websites, creative, and funnels.',
+    timeline: 'Monthly',
+    cta: 'Apply for Growth Partner',
+    includes: ['Monthly strategy', 'Campaign planning', 'Landing page updates', 'Creative testing support', 'Email and funnel copy', 'Performance review'],
+  },
+]
+
+const faqs = [
+  ['What kind of businesses do you work with?', 'We work with startups, creators, service businesses, consultants, education brands, and growing teams that need sharper marketing assets and clearer digital experiences.'],
+  ['Do you only design websites?', 'No. Websites are often part of the work, but we also help with positioning, campaign messaging, paid creative, email funnels, and launch strategy.'],
+  ['Can you work with our existing brand?', 'Yes. We can work within your current brand system, improve what is already there, or create a cleaner direction if the current brand is not strong enough.'],
+  ['Do you handle development?', 'Yes. We can build responsive frontend pages and marketing websites. If a project needs complex backend functionality, we will define the scope clearly before starting.'],
+  ['How long does a sprint take?', 'Most focused sprints take 1 to 3 weeks depending on scope, feedback speed, and asset complexity.'],
+  ['What do you need from us before starting?', 'We usually need your offer details, target audience, existing website or assets, examples you like, business goals, and any current performance data.'],
+  ['Can you help with ads?', 'Yes. We can help with campaign angles, ad concepts, creative direction, landing pages, and testing plans. Media buying can be added if it fits the project scope.'],
+  ['Do you offer ongoing support?', 'Yes. Ongoing growth support is available for teams that need continuous campaign, website, creative, and funnel improvements.'],
+]
+
+const formFields = ['Name', 'Email', 'Company', 'Website', 'Budget range', 'Project type', 'Timeline', 'What do you need help with?']
 
 const workItems = [
   {
@@ -388,7 +558,7 @@ function FixedHero({ copied, onCopy }) {
               </div>
 
               <div className="role-line">
-                <span>Marketing agency, growth partner</span>
+                <span>Marketing agency for focused growth</span>
                 <button className="copy-btn" type="button" onClick={onCopy} aria-label="Copy email address">
                   <Copy size={16} />
                 </button>
@@ -402,23 +572,32 @@ function FixedHero({ copied, onCopy }) {
                   </a>
                 ))}
               </div>
+
+              <ul className="hero-stats" aria-label="spikxlabs highlights">
+                {heroStats.map((stat) => (
+                  <li key={stat}>{stat}</li>
+                ))}
+              </ul>
             </div>
 
             <div className="hero-right">
               <div className="brand-mark-hero">
                 <img src={logoSrc} alt="spikxlabs logo" />
               </div>
-              <p>
-                Hello, we build minimal brand systems, fast launch pages, and measurable growth campaigns for teams
-                that want sharper marketing without extra noise. Let&apos;s create!
-              </p>
+              <div className="hero-message">
+                <h2>Marketing that looks sharp and sells clearly.</h2>
+                <p>
+                  We build high-converting websites, brand messaging, campaign assets, and growth systems for teams
+                  that want clean design, clear strategy, and measurable momentum.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="hero-section-row">
             <h2>
               <span>02</span>
-              Skills<span className="period">.</span>
+              Services<span className="period">.</span>
             </h2>
             <a className="resume-link" href="#contact">
               Start Sprint
@@ -444,7 +623,7 @@ function SkillStack() {
           return (
             <section
               className="skill-stage"
-              id={index === 0 ? 'skill' : undefined}
+              id={index === 0 ? 'services' : undefined}
               key={skill.title}
               ref={(node) => {
                 cardRefs.current[index] = node
@@ -475,6 +654,93 @@ function SkillStack() {
   )
 }
 
+function SectionTitle({ number, title }) {
+  return (
+    <RevealBlock className="section-title">
+      <h2>
+        <span>{number}</span>
+        {title}
+        <span className="period">.</span>
+      </h2>
+    </RevealBlock>
+  )
+}
+
+function AboutSection() {
+  return (
+    <section className="content-section about-section" id="about">
+      <div className="content-container">
+        <div className="section-head">
+          <SectionTitle number="03" title="About" />
+        </div>
+
+        <div className="about-layout">
+          <RevealBlock className="about-lead">
+            <h3>We turn scattered marketing into focused growth systems.</h3>
+            <p>
+              Most brands do not need more noise. They need a clear offer, a website that explains it fast, creative
+              that matches the market, and a funnel that keeps working after the first click.
+            </p>
+            <p>
+              spikxlabs helps you connect those pieces. We combine strategy, design, copy, and campaign execution so
+              your brand feels consistent from the first ad impression to the final sales conversation.
+            </p>
+          </RevealBlock>
+
+          <div className="highlight-list">
+            {aboutHighlights.map((highlight, index) => (
+              <RevealBlock as="article" className="highlight-item" delay={index * 90} key={highlight}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{highlight}</p>
+              </RevealBlock>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ServiceDetails() {
+  return (
+    <section className="content-section service-details" id="services-detail">
+      <div className="content-container">
+        <div className="section-head">
+          <RevealBlock className="section-title">
+            <h2>What we build</h2>
+          </RevealBlock>
+          <RevealBlock className="section-action" delay={120}>
+            <a href="#contact">Start a Sprint</a>
+          </RevealBlock>
+        </div>
+
+        <div className="service-detail-grid">
+          {serviceDetails.map((service, index) => (
+            <RevealBlock as="article" className="service-detail-card" delay={index * 80} key={service.title}>
+              <div>
+                <span className="card-number">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{service.title}</h3>
+                <p>{service.copy}</p>
+              </div>
+              <div>
+                <h4>Includes</h4>
+                <ul>
+                  {service.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <p className="best-for">
+                <strong>Best for:</strong> {service.bestFor}
+              </p>
+            </RevealBlock>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Projects() {
   const [activeFilter, setActiveFilter] = useState(filters[0])
   const filteredProjects = useMemo(
@@ -488,8 +754,8 @@ function Projects() {
         <div className="section-head">
           <RevealBlock className="section-title">
             <h2>
-              <span>03</span>
-              Project<span className="period">.</span>
+              <span>04</span>
+              Selected projects<span className="period">.</span>
             </h2>
           </RevealBlock>
 
@@ -532,9 +798,15 @@ function Projects() {
                   <span>{project.year}</span>
                 </div>
                 <p>{project.description}</p>
+                <p className="project-result">{project.result}</p>
                 <div className="project-meta">
                   <span>{project.client}</span>
                   <span>{project.type}</span>
+                </div>
+                <div className="project-deliverables">
+                  {project.deliverables.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
                 </div>
                 <div className="project-tags">
                   {project.tags.map((tag) => (
@@ -554,13 +826,37 @@ function Projects() {
   )
 }
 
+function ProcessSection() {
+  return (
+    <section className="content-section process-section" id="process">
+      <div className="content-container">
+        <div className="section-head">
+          <SectionTitle number="05" title="How the sprint works" />
+        </div>
+
+        <div className="process-list">
+          {processSteps.map((step, index) => (
+            <RevealBlock as="article" className="process-item" delay={index * 100} key={step.title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </div>
+            </RevealBlock>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function WorkExperience() {
   return (
     <section className="work-section" id="work">
       <div className="content-container">
         <div className="work-heading">
           <RevealBlock className="number-reveal">
-            <span>04</span>
+            <span>06</span>
           </RevealBlock>
           <RevealBlock className="work-title" delay={180}>
             <h2>Work Experience</h2>
@@ -587,6 +883,118 @@ function WorkExperience() {
   )
 }
 
+function TestimonialsSection() {
+  return (
+    <section className="content-section testimonials-section">
+      <div className="content-container">
+        <div className="section-head">
+          <SectionTitle number="07" title="What clients say" />
+        </div>
+
+        <div className="testimonial-grid">
+          {testimonials.map((testimonial, index) => (
+            <RevealBlock as="figure" className="testimonial-card" delay={index * 120} key={testimonial.client}>
+              <blockquote>{testimonial.quote}</blockquote>
+              <figcaption>{testimonial.client}</figcaption>
+            </RevealBlock>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PricingSection() {
+  return (
+    <section className="content-section pricing-section">
+      <div className="content-container">
+        <div className="section-head">
+          <SectionTitle number="08" title="Sprint packages" />
+        </div>
+
+        <div className="pricing-grid">
+          {packages.map((item, index) => (
+            <RevealBlock as="article" className="pricing-card" delay={index * 120} key={item.name}>
+              <div>
+                <h3>{item.name}</h3>
+                <p>{item.bestFor}</p>
+              </div>
+              <ul>
+                {item.includes.map((included) => (
+                  <li key={included}>{included}</li>
+                ))}
+              </ul>
+              <div className="package-foot">
+                <span>{item.timeline}</span>
+                <a href="#contact">{item.cta}</a>
+              </div>
+            </RevealBlock>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState(0)
+
+  return (
+    <section className="content-section faq-section">
+      <div className="content-container">
+        <div className="section-head">
+          <SectionTitle number="09" title="Questions before we start" />
+        </div>
+
+        <div className="faq-list">
+          {faqs.map(([question, answer], index) => {
+            const isOpen = openIndex === index
+            return (
+              <RevealBlock as="article" className={`faq-item ${isOpen ? 'is-open' : ''}`} delay={index * 45} key={question}>
+                <button type="button" onClick={() => setOpenIndex(isOpen ? -1 : index)}>
+                  <span>{question}</span>
+                  <span aria-hidden="true">{isOpen ? '-' : '+'}</span>
+                </button>
+                <p>{answer}</p>
+              </RevealBlock>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ContactSection() {
+  return (
+    <section className="content-section contact-section" id="contact">
+      <div className="content-container">
+        <div className="contact-panel">
+          <RevealBlock className="contact-copy">
+            <span className="card-number">10</span>
+            <h2>Got an idea worth sharing?</h2>
+            <p>
+              Tell us what you are building, what is not working, and what you want to improve. We will help you shape
+              the next smart sprint.
+            </p>
+            <a href="mailto:hello@spikxlabs.com">Get in Touch</a>
+          </RevealBlock>
+
+          <RevealBlock className="brief-fields" delay={160}>
+            <h3>Project brief fields</h3>
+            <div>
+              {formFields.map((field) => (
+                <span key={field}>{field}</span>
+              ))}
+            </div>
+            <p>Thanks for reaching out. We will review your project and reply with next steps soon.</p>
+          </RevealBlock>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Footer() {
   const [footerRef, footerVisible] = useReveal({ threshold: 0.28, rootMargin: '0px 0px -8% 0px' })
   const canvasRef = useRef(null)
@@ -599,7 +1007,7 @@ function Footer() {
   }
 
   return (
-    <footer className={`footer-section ${footerVisible ? 'is-live' : ''}`} id="contact" ref={footerRef}>
+    <footer className={`footer-section ${footerVisible ? 'is-live' : ''}`} id="footer" ref={footerRef}>
       <div className="footer-cover" />
       <canvas className="footer-canvas" ref={canvasRef} aria-hidden="true" />
 
@@ -636,6 +1044,8 @@ function Footer() {
             Available For Work
           </div>
         </div>
+
+        <p className="legal-line">Copyright 2026 spikxlabs. All rights reserved.</p>
       </div>
 
       <span className="footer-dot" aria-hidden="true" />
@@ -665,8 +1075,15 @@ function App() {
       <main className="scroll-content">
         <div className="hero-spacer" aria-hidden="true" />
         <SkillStack />
+        <AboutSection />
+        <ServiceDetails />
         <Projects />
+        <ProcessSection />
         <WorkExperience />
+        <TestimonialsSection />
+        <PricingSection />
+        <FAQSection />
+        <ContactSection />
         <Footer />
       </main>
     </div>
