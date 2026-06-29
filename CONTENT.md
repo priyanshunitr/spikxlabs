@@ -22,7 +22,7 @@ Clear, confident, minimal, useful, direct, and founder-friendly.
 
 ### Primary CTA
 
-Start a Sprint
+Start a Project
 
 ### Secondary CTA
 
@@ -71,7 +71,7 @@ We build high-converting websites, brand messaging, campaign assets, and growth 
 
 ### Primary CTA
 
-Start a Sprint
+Start a Project
 
 ### Secondary CTA
 
@@ -104,7 +104,7 @@ spikxlabs helps you connect those pieces. We combine strategy, design, copy, and
 - Remote-first agency based in India
 - Built for fast-moving founders and lean teams
 - Strong focus on clean design, clear copy, and practical execution
-- Flexible sprint model for launches, campaigns, and ongoing growth
+- Flexible project model for launches, campaigns, and ongoing growth
 
 ## Services Section
 
@@ -206,7 +206,7 @@ Brands that already get traffic or leads but need better follow-up and higher co
 
 ### Section Heading
 
-How the sprint works
+How we work
 
 ### Step 1: Diagnose
 
@@ -214,7 +214,7 @@ We review your offer, audience, website, funnel, competitors, and current market
 
 ### Step 2: Shape
 
-We define the strategy: positioning, message hierarchy, campaign angle, content structure, and the exact assets needed for the sprint.
+We define the strategy: positioning, message hierarchy, campaign angle, content structure, and the exact assets needed for the project.
 
 ### Step 3: Build
 
@@ -234,7 +234,7 @@ We review performance signals and recommend next steps so the work can improve a
 
 Selected projects
 
-### Project 1: LaunchPad Sprint
+### Project 1: LaunchPad System
 
 Category:
 
@@ -352,9 +352,9 @@ Yes. We can work within your current brand system, improve what is already there
 
 Yes. We can build responsive frontend pages and marketing websites. If a project needs complex backend functionality, we will define the scope clearly before starting.
 
-### FAQ 5: How long does a sprint take?
+### FAQ 5: How long does a project take?
 
-Most focused sprints take 1 to 3 weeks depending on scope, feedback speed, and asset complexity.
+Most focused projects take 1 to 3 weeks depending on scope, feedback speed, and asset complexity.
 
 ### FAQ 6: What do you need from us before starting?
 
@@ -376,7 +376,7 @@ Got an idea worth sharing?
 
 ### Supporting Copy
 
-Tell us what you are building, what is not working, and what you want to improve. We will help you shape the next smart sprint.
+Tell us what you are building, what is not working, and what you want to improve. We will help you shape the next smart project.
 
 ### Contact CTA
 
@@ -405,7 +405,7 @@ Thanks for reaching out. We will review your project and reply with next steps s
 
 ### Footer CTA
 
-Available for selected growth sprints.
+Available for selected projects.
 
 ### Footer Links
 

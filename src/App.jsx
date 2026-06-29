@@ -48,7 +48,7 @@ const filters = ['Growth', 'Websites', 'Performance', 'Brand']
 
 const projects = [
   {
-    title: 'LaunchPad Sprint',
+    title: 'LaunchPad System',
     year: '2026',
     description: 'Built a launch-ready landing page and campaign messaging system for a B2B SaaS product preparing for market validation.',
     client: 'B2B SaaS',
@@ -86,7 +86,7 @@ const aboutHighlights = [
   'Remote-first agency based in India',
   'Built for fast-moving founders and lean teams',
   'Strong focus on clean design, clear copy, and practical execution',
-  'Flexible sprint model for launches, campaigns, and ongoing growth',
+  'Flexible project model for launches, campaigns, and ongoing growth',
 ]
 
 const serviceDetails = [
@@ -169,7 +169,7 @@ const processSteps = [
   },
   {
     title: 'Shape',
-    copy: 'We define the strategy: positioning, message hierarchy, campaign angle, content structure, and the exact assets needed for the sprint.',
+    copy: 'We define the strategy: positioning, message hierarchy, campaign angle, content structure, and the exact assets needed for the project.',
   },
   {
     title: 'Build',
@@ -205,7 +205,7 @@ const faqs = [
   ['Do you only design websites?', 'No. Websites are often part of the work, but we also help with positioning, campaign messaging, paid creative, email funnels, and launch strategy.'],
   ['Can you work with our existing brand?', 'Yes. We can work within your current brand system, improve what is already there, or create a cleaner direction if the current brand is not strong enough.'],
   ['Do you handle development?', 'Yes. We can build responsive frontend pages and marketing websites. If a project needs complex backend functionality, we will define the scope clearly before starting.'],
-  ['How long does a sprint take?', 'Most focused sprints take 1 to 3 weeks depending on scope, feedback speed, and asset complexity.'],
+  ['How long does a project take?', 'Most focused projects take 1 to 3 weeks depending on scope, feedback speed, and asset complexity.'],
   ['What do you need from us before starting?', 'We usually need your offer details, target audience, existing website or assets, examples you like, business goals, and any current performance data.'],
   ['Can you help with ads?', 'Yes. We can help with campaign angles, ad concepts, creative direction, landing pages, and testing plans. Media buying can be added if it fits the project scope.'],
   ['Do you offer ongoing support?', 'Yes. Ongoing growth support is available for teams that need continuous campaign, website, creative, and funnel improvements.'],
@@ -330,9 +330,9 @@ function RevealBlock({ as: Component = 'div', children, className = '', delay = 
   )
 }
 
-function Nav({ menuOpen, setMenuOpen }) {
+function Nav({ hidden, menuOpen, setMenuOpen }) {
   return (
-    <header className="top-nav">
+    <header className={`top-nav ${hidden && !menuOpen ? 'is-hidden' : ''}`}>
       <div className="nav-inner">
         <a className="brand-link" href="#top" onClick={() => setMenuOpen(false)}>
           <span className="logo-frame" aria-hidden="true">
@@ -402,7 +402,7 @@ function FixedHero({ copied, onCopy }) {
 
             <div className="hero-actions">
               <a className="resume-link" href="#contact">
-                Start Sprint
+                Start a Project
               </a>
               <div className="role-line">
                 <span>hello@spikxlabs.com</span>
@@ -542,7 +542,7 @@ function ServiceDetails() {
             <h2>What we build</h2>
           </RevealBlock>
           <RevealBlock className="section-action" delay={120}>
-            <a href="#contact">Start a Sprint</a>
+            <a href="#contact">Start a Project</a>
           </RevealBlock>
         </div>
 
@@ -663,7 +663,7 @@ function ProcessSection() {
     <section className="content-section process-section" id="process">
       <div className="content-container">
         <div className="section-head">
-          <SectionTitle number="05" title="How the sprint works" />
+          <SectionTitle number="05" title="How we work" />
         </div>
 
         <div className="process-list">
@@ -742,7 +742,7 @@ function ContactSection() {
             <h2>Got an idea worth sharing?</h2>
             <p>
               Tell us what you are building, what is not working, and what you want to improve. We will help you shape
-              the next smart sprint.
+              the next smart project.
             </p>
             <a href="mailto:hello@spikxlabs.com">Get in Touch</a>
           </RevealBlock>
@@ -765,7 +765,7 @@ function ContactSection() {
 function Footer() {
   const openEmail = () => {
     const subject = encodeURIComponent("Let's work together")
-    const body = encodeURIComponent('Hi spikxlabs,\n\nI want to discuss a marketing sprint.\n\nBest,')
+    const body = encodeURIComponent('Hi spikxlabs,\n\nI want to discuss a marketing project.\n\nBest,')
     window.location.href = `mailto:hello@spikxlabs.com?subject=${subject}&body=${body}`
   }
 
@@ -786,7 +786,7 @@ function Footer() {
             </p>
             <div className="availability">
               <span />
-              Available for selected growth sprints
+              Available for selected projects
             </div>
           </div>
 
@@ -818,7 +818,7 @@ function Footer() {
               </a>
               <p>Remote-first team helping founders turn sharper positioning into measurable demand.</p>
               <button type="button" onClick={openEmail}>
-                Start a Sprint
+                Start a Project
               </button>
             </div>
           </div>
@@ -836,6 +836,37 @@ function Footer() {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [navHidden, setNavHidden] = useState(false)
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+    let ticking = false
+
+    const updateNav = () => {
+      const currentScrollY = window.scrollY
+      const isScrollingDown = currentScrollY > lastScrollY
+      const hasMovedEnough = Math.abs(currentScrollY - lastScrollY) > 6
+
+      if (currentScrollY < 80) {
+        setNavHidden(false)
+      } else if (hasMovedEnough) {
+        setNavHidden(isScrollingDown)
+      }
+
+      lastScrollY = currentScrollY
+      ticking = false
+    }
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateNav)
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const copyEmail = async () => {
     try {
@@ -850,7 +881,7 @@ function App() {
   return (
     <div className="site-shell">
       <FixedHero copied={copied} onCopy={copyEmail} />
-      <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Nav hidden={navHidden} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       <main className="scroll-content">
         <div className="hero-spacer" aria-hidden="true" />
