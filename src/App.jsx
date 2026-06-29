@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import Matter from 'matter-js'
 import { ArrowUpRight, Copy, ExternalLink, Globe, Mail, Menu, X } from 'lucide-react'
 import appDev from './assets/reference/reference-appdev.png'
 import fullStack from './assets/reference/reference-fullstack.png'
@@ -262,37 +261,24 @@ const workItems = [
   },
 ]
 
-const footerWords = [
-  'Strategy',
-  'Funnels',
-  'Landing Pages',
-  'Creative',
-  'Meta Ads',
-  'SEO',
-  'Email',
-  'Analytics',
-  'Brand',
-  'Content',
-  'Automation',
-  'Retargeting',
+const footerCompanyLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#project' },
+  { label: 'Process', href: '#process' },
+  { label: 'Contact', href: '#contact' },
+]
+
+const footerServices = [
+  'Conversion websites',
+  'Growth campaigns',
+  'Brand messaging',
+  'Performance creative',
+  'Email funnels',
 ]
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
-}
-
-function drawRoundRect(ctx, x, y, width, height, radius) {
-  if (ctx.roundRect) {
-    ctx.roundRect(x, y, width, height, radius)
-    return
-  }
-
-  const r = Math.min(radius, width / 2, height / 2)
-  ctx.moveTo(x + r, y)
-  ctx.arcTo(x + width, y, x + width, y + height, r)
-  ctx.arcTo(x + width, y + height, x, y + height, r)
-  ctx.arcTo(x, y + height, x, y, r)
-  ctx.arcTo(x, y, x + width, y, r)
 }
 
 function useReveal(options) {
@@ -376,124 +362,6 @@ function useSkillMotion(count) {
   }, [count])
 
   return { containerRef, cardRefs, motion }
-}
-
-function useFooterPhysics(canvasRef, containerRef, active) {
-  useEffect(() => {
-    const canvas = canvasRef.current
-    const container = containerRef.current
-    if (!active || !canvas || !container) return undefined
-
-    const colors = ['#8b5cf6', '#10b981', '#f59e0b', '#ef4444', '#3b82f6', '#ec4899', '#06b6d4', '#84cc16']
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return undefined
-
-    let animationFrame = 0
-    let resetTimer = 0
-    let engine = null
-    let runner = null
-    let bodies = []
-
-    const disposeWorld = () => {
-      window.cancelAnimationFrame(animationFrame)
-      window.clearTimeout(resetTimer)
-      if (runner) Matter.Runner.stop(runner)
-      if (engine) Matter.Engine.clear(engine)
-      engine = null
-      runner = null
-      bodies = []
-    }
-
-    const setupWorld = () => {
-      disposeWorld()
-      const rect = container.getBoundingClientRect()
-      const width = Math.max(rect.width, 320)
-      const height = Math.max(rect.height, 560)
-      const ratio = window.devicePixelRatio || 1
-
-      canvas.width = width * ratio
-      canvas.height = height * ratio
-      canvas.style.width = `${width}px`
-      canvas.style.height = `${height}px`
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
-
-      engine = Matter.Engine.create()
-      engine.world.gravity.y = 0.82
-      runner = Matter.Runner.create()
-
-      const walls = [
-        Matter.Bodies.rectangle(width / 2, height + 18, width, 36, { isStatic: true }),
-        Matter.Bodies.rectangle(-18, height / 2, 36, height, { isStatic: true }),
-        Matter.Bodies.rectangle(width + 18, height / 2, 36, height, { isStatic: true }),
-        Matter.Bodies.rectangle(width / 2, -18, width, 36, { isStatic: true }),
-      ]
-
-      bodies = footerWords.map((word, index) => {
-        const chipWidth = Math.max(word.length * 12 + 36, 92)
-        const x = 70 + Math.random() * Math.max(width - 140, 1)
-        const y = 60 + Math.random() * 160
-        const body = Matter.Bodies.rectangle(x, y, chipWidth, 42, {
-          restitution: 0.62,
-          friction: 0.45,
-          frictionAir: 0.018,
-          density: 0.001,
-        })
-
-        body.labelText = word
-        body.labelColor = colors[index % colors.length]
-        body.chipWidth = chipWidth
-        return body
-      })
-
-      const mouse = Matter.Mouse.create(canvas)
-      const mouseConstraint = Matter.MouseConstraint.create(engine, {
-        mouse,
-        constraint: {
-          stiffness: 0.18,
-          render: { visible: false },
-        },
-      })
-
-      Matter.Composite.add(engine.world, [...walls, ...bodies, mouseConstraint])
-      Matter.Runner.run(runner, engine)
-
-      const draw = () => {
-        ctx.clearRect(0, 0, width, height)
-        bodies.forEach((body) => {
-          const chipWidth = body.chipWidth
-          ctx.save()
-          ctx.translate(body.position.x, body.position.y)
-          ctx.rotate(body.angle)
-          ctx.beginPath()
-          drawRoundRect(ctx, -chipWidth / 2, -21, chipWidth, 42, 21)
-          ctx.fillStyle = body.labelColor
-          ctx.fill()
-          ctx.fillStyle = '#ffffff'
-          ctx.font = '700 16px Geist, Arial, sans-serif'
-          ctx.textAlign = 'center'
-          ctx.textBaseline = 'middle'
-          ctx.fillText(body.labelText, 0, 1)
-          ctx.restore()
-        })
-        animationFrame = window.requestAnimationFrame(draw)
-      }
-
-      draw()
-    }
-
-    const onResize = () => {
-      window.clearTimeout(resetTimer)
-      resetTimer = window.setTimeout(setupWorld, 180)
-    }
-
-    setupWorld()
-    window.addEventListener('resize', onResize)
-
-    return () => {
-      window.removeEventListener('resize', onResize)
-      disposeWorld()
-    }
-  }, [active, canvasRef, containerRef])
 }
 
 function RevealBlock({ as: Component = 'div', children, className = '', delay = 0 }) {
@@ -996,10 +864,6 @@ function ContactSection() {
 }
 
 function Footer() {
-  const [footerRef, footerVisible] = useReveal({ threshold: 0.28, rootMargin: '0px 0px -8% 0px' })
-  const canvasRef = useRef(null)
-  useFooterPhysics(canvasRef, footerRef, footerVisible)
-
   const openEmail = () => {
     const subject = encodeURIComponent("Let's work together")
     const body = encodeURIComponent('Hi spikxlabs,\n\nI want to discuss a marketing sprint.\n\nBest,')
@@ -1007,48 +871,65 @@ function Footer() {
   }
 
   return (
-    <footer className={`footer-section ${footerVisible ? 'is-live' : ''}`} id="footer" ref={footerRef}>
-      <div className="footer-cover" />
-      <canvas className="footer-canvas" ref={canvasRef} aria-hidden="true" />
-
+    <footer className="footer-section" id="footer">
       <div className="footer-inner">
-        <div className="footer-topline">
-          <a className="footer-brand" href="#top">
-            <span className="logo-frame" aria-hidden="true">
-              <img src={logoSrc} alt="" />
-            </span>
-            <span>spikxlabs</span>
-          </a>
-          <div className="footer-links">
-            <a href="mailto:hello@spikxlabs.com">Email</a>
-            <a href="#project">Projects</a>
-            <a href="#top">Top</a>
+        <div className="footer-main">
+          <div className="footer-brand-block">
+            <a className="footer-brand" href="#top" aria-label="spikxlabs home">
+              <span className="logo-frame" aria-hidden="true">
+                <img src={logoSrc} alt="" />
+              </span>
+              <span>spikxlabs</span>
+            </a>
+            <p>
+              A focused marketing agency building conversion websites, campaign systems, and practical growth assets
+              for ambitious teams.
+            </p>
+            <div className="availability">
+              <span />
+              Available for selected growth sprints
+            </div>
+          </div>
+
+          <div className="footer-nav-groups">
+            <div className="footer-group">
+              <h3>Company</h3>
+              <ul>
+                {footerCompanyLinks.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="footer-group">
+              <h3>Services</h3>
+              <ul>
+                {footerServices.map((service) => (
+                  <li key={service}>{service}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="footer-group footer-contact-card">
+              <h3>Contact</h3>
+              <a className="footer-contact-link" href="mailto:hello@spikxlabs.com">
+                hello@spikxlabs.com
+              </a>
+              <p>Remote-first team helping founders turn sharper positioning into measurable demand.</p>
+              <button type="button" onClick={openEmail}>
+                Start a Sprint
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="footer-message">
-          <h2>
-            Got an idea <span>worth sharing?</span>
-          </h2>
-          <h3>
-            Let&apos;s bring <strong>something extraordinary</strong> <span>to life!</span>
-          </h3>
+        <div className="footer-bottom">
+          <p>Copyright 2026 spikxlabs. All rights reserved.</p>
+          <a href="#top">Back to top</a>
         </div>
-
-        <div className="footer-cta">
-          <button type="button" onClick={openEmail}>
-            Get in Touch
-          </button>
-          <div className="availability">
-            <span />
-            Available For Work
-          </div>
-        </div>
-
-        <p className="legal-line">Copyright 2026 spikxlabs. All rights reserved.</p>
       </div>
-
-      <span className="footer-dot" aria-hidden="true" />
     </footer>
   )
 }
