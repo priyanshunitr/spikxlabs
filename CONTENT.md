@@ -1,16 +1,16 @@
-# SpikxLabs Website Content
+# spikxlabs Website Content
 
-This file contains the core copy and content blocks for the SpikxLabs agency website. Use it as the source of truth for page sections, CTAs, service descriptions, and supporting copy.
+This file contains the core copy and content blocks for the spikxlabs agency website. Use it as the source of truth for page sections, CTAs, service descriptions, and supporting copy.
 
 ## Brand Foundation
 
 ### Agency Name
 
-SpikxLabs
+spikxlabs
 
 ### One-Line Positioning
 
-SpikxLabs builds conversion-focused websites, brand systems, and growth campaigns for ambitious teams.
+spikxlabs builds conversion-focused websites, brand systems, and growth campaigns for ambitious teams.
 
 ### Short Description
 
@@ -45,11 +45,11 @@ hello@spikxlabs.com
 
 ### Homepage Title
 
-SpikxLabs - Marketing Agency for Websites, Brand Systems, and Growth Campaigns
+spikxlabs - Marketing Agency for Websites, Brand Systems, and Growth Campaigns
 
 ### Meta Description
 
-SpikxLabs is a remote marketing agency building conversion-focused websites, brand systems, launch campaigns, paid creative, and growth funnels for ambitious brands.
+spikxlabs is a remote marketing agency building conversion-focused websites, brand systems, launch campaigns, paid creative, and growth funnels for ambitious brands.
 
 ### Keywords
 
@@ -97,7 +97,7 @@ We turn scattered marketing into focused growth systems.
 
 Most brands do not need more noise. They need a clear offer, a website that explains it fast, creative that matches the market, and a funnel that keeps working after the first click.
 
-SpikxLabs helps you connect those pieces. We combine strategy, design, copy, and campaign execution so your brand feels consistent from the first ad impression to the final sales conversation.
+spikxlabs helps you connect those pieces. We combine strategy, design, copy, and campaign execution so your brand feels consistent from the first ad impression to the final sales conversation.
 
 ### About Highlights
 
@@ -308,7 +308,7 @@ What clients say
 
 ### Testimonial 1
 
-SpikxLabs helped us turn a vague product idea into a clear landing page and campaign plan. The work felt sharp, fast, and easy to use.
+spikxlabs helped us turn a vague product idea into a clear landing page and campaign plan. The work felt sharp, fast, and easy to use.
 
 Client:
 
@@ -499,7 +499,7 @@ Available for selected growth sprints.
 
 ### Legal Line
 
-Copyright 2026 SpikxLabs. All rights reserved.
+Copyright 2026 spikxlabs. All rights reserved.
 
 ## Extra Page Ideas
 

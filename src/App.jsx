@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Matter from 'matter-js'
 import { ArrowUpRight, Copy, ExternalLink, Globe, Mail, Menu, X } from 'lucide-react'
-import portrait from './assets/reference/reference-portrait.png'
 import appDev from './assets/reference/reference-appdev.png'
 import fullStack from './assets/reference/reference-fullstack.png'
 import uiDesign from './assets/reference/reference-ui.png'
 import codeProject from './assets/reference/reference-code.png'
 import prepProject from './assets/reference/reference-prepai.png'
 import renameProject from './assets/reference/reference-rename.png'
+
+const logoSrc = '/logo.jpg'
 
 const navItems = [
   { label: 'About', href: '#top' },
@@ -77,7 +78,7 @@ const projects = [
 const workItems = [
   {
     period: 'JANUARY, 2026 - CURRENT',
-    title: 'SpikxLabs (Marketing Agency)',
+    title: 'spikxlabs (Marketing Agency)',
     duration: 'Active',
     description:
       'Building focused marketing systems for startups and local service brands: conversion websites, launch campaigns, paid-social testing, funnel copy, and retention journeys.',
@@ -344,7 +345,10 @@ function Nav({ menuOpen, setMenuOpen }) {
     <header className="top-nav">
       <div className="nav-inner">
         <a className="brand-link" href="#top" onClick={() => setMenuOpen(false)}>
-          Spikx
+          <span className="logo-frame" aria-hidden="true">
+            <img src={logoSrc} alt="" />
+          </span>
+          <span>spikxlabs</span>
         </a>
 
         <nav className="desktop-links" aria-label="Primary navigation">
@@ -373,14 +377,14 @@ function Nav({ menuOpen, setMenuOpen }) {
 
 function FixedHero({ copied, onCopy }) {
   return (
-    <section className="fixed-hero" id="top" aria-label="SpikxLabs introduction">
+    <section className="fixed-hero" id="top" aria-label="spikxlabs introduction">
       <div className="hero-frame">
         <main className="hero-content">
           <div className="hero-grid">
             <div className="hero-left">
-              <div className="hero-name" aria-label="Spikx Labs">
-                <h1>Spikx</h1>
-                <h1>Labs</h1>
+              <div className="hero-name" aria-label="spikxlabs">
+                <h1>spikx</h1>
+                <h1>labs</h1>
               </div>
 
               <div className="role-line">
@@ -401,8 +405,8 @@ function FixedHero({ copied, onCopy }) {
             </div>
 
             <div className="hero-right">
-              <div className="portrait-wrap">
-                <img src={portrait} alt="SpikxLabs founder portrait reference" />
+              <div className="brand-mark-hero">
+                <img src={logoSrc} alt="spikxlabs logo" />
               </div>
               <p>
                 Hello, we build minimal brand systems, fast launch pages, and measurable growth campaigns for teams
@@ -590,7 +594,7 @@ function Footer() {
 
   const openEmail = () => {
     const subject = encodeURIComponent("Let's work together")
-    const body = encodeURIComponent('Hi SpikxLabs,\n\nI want to discuss a marketing sprint.\n\nBest,')
+    const body = encodeURIComponent('Hi spikxlabs,\n\nI want to discuss a marketing sprint.\n\nBest,')
     window.location.href = `mailto:hello@spikxlabs.com?subject=${subject}&body=${body}`
   }
 
@@ -600,10 +604,18 @@ function Footer() {
       <canvas className="footer-canvas" ref={canvasRef} aria-hidden="true" />
 
       <div className="footer-inner">
-        <div className="footer-links">
-          <a href="mailto:hello@spikxlabs.com">Email</a>
-          <a href="#project">Projects</a>
-          <a href="#top">Top</a>
+        <div className="footer-topline">
+          <a className="footer-brand" href="#top">
+            <span className="logo-frame" aria-hidden="true">
+              <img src={logoSrc} alt="" />
+            </span>
+            <span>spikxlabs</span>
+          </a>
+          <div className="footer-links">
+            <a href="mailto:hello@spikxlabs.com">Email</a>
+            <a href="#project">Projects</a>
+            <a href="#top">Top</a>
+          </div>
         </div>
 
         <div className="footer-message">
