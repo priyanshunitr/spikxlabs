@@ -14,7 +14,6 @@ const navItems = [
   { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#project' },
   { label: 'Process', href: '#process' },
-  { label: 'Work', href: '#work' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -207,30 +206,6 @@ const testimonials = [
   },
 ]
 
-const packages = [
-  {
-    name: 'Website Sprint',
-    bestFor: 'Teams that need a polished landing page or website refresh.',
-    timeline: '1 to 2 weeks',
-    cta: 'Book Website Sprint',
-    includes: ['Strategy call', 'Page structure', 'Website copy', 'Visual direction', 'Responsive frontend build', 'Basic conversion review'],
-  },
-  {
-    name: 'Launch Sprint',
-    bestFor: 'Brands preparing to launch a product, service, campaign, or offer.',
-    timeline: '2 to 3 weeks',
-    cta: 'Book Launch Sprint',
-    includes: ['Offer positioning', 'Landing page', 'Campaign hooks', 'Creative direction', 'Email or lead follow-up copy', 'Launch checklist'],
-  },
-  {
-    name: 'Growth Partner',
-    bestFor: 'Teams that need ongoing marketing support across campaigns, websites, creative, and funnels.',
-    timeline: 'Monthly',
-    cta: 'Apply for Growth Partner',
-    includes: ['Monthly strategy', 'Campaign planning', 'Landing page updates', 'Creative testing support', 'Email and funnel copy', 'Performance review'],
-  },
-]
-
 const faqs = [
   ['What kind of businesses do you work with?', 'We work with startups, creators, service businesses, consultants, education brands, and growing teams that need sharper marketing assets and clearer digital experiences.'],
   ['Do you only design websites?', 'No. Websites are often part of the work, but we also help with positioning, campaign messaging, paid creative, email funnels, and launch strategy.'],
@@ -243,23 +218,6 @@ const faqs = [
 ]
 
 const formFields = ['Name', 'Email', 'Company', 'Website', 'Budget range', 'Project type', 'Timeline', 'What do you need help with?']
-
-const workItems = [
-  {
-    period: 'JANUARY, 2026 - CURRENT',
-    title: 'spikxlabs (Marketing Agency)',
-    duration: 'Active',
-    description:
-      'Building focused marketing systems for startups and local service brands: conversion websites, launch campaigns, paid-social testing, funnel copy, and retention journeys.',
-  },
-  {
-    period: '2024 - 2025',
-    title: 'Growth Partner Projects',
-    duration: '20+ launches',
-    description:
-      'Partnered with founders on brand refreshes, landing pages, performance creative, and analytics cleanups. Every sprint ships with a clear offer, a measurable funnel, and content the team can keep using.',
-  },
-]
 
 const footerCompanyLinks = [
   { label: 'About', href: '#about' },
@@ -421,55 +379,55 @@ function FixedHero({ copied, onCopy }) {
           <div className="hero-grid">
             <div className="hero-left">
               <div className="hero-name" aria-label="spikxlabs">
-                <h1>spikx</h1>
-                <h1>labs</h1>
+                <span>spikxlabs growth studio</span>
               </div>
 
-              <div className="role-line">
-                <span>Marketing agency for focused growth</span>
-                <button className="copy-btn" type="button" onClick={onCopy} aria-label="Copy email address">
-                  <Copy size={16} />
-                </button>
-                <span className={`copy-note ${copied ? 'is-visible' : ''}`}>Copied</span>
-              </div>
-
-              <div className="social-links" aria-label="Social links">
-                {socials.map(({ label, href, icon: Icon }) => (
-                  <a href={href} key={label} aria-label={label}>
-                    <Icon size={24} />
-                  </a>
-                ))}
-              </div>
-
-              <ul className="hero-stats" aria-label="spikxlabs highlights">
-                {heroStats.map((stat) => (
-                  <li key={stat}>{stat}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="hero-right">
-              <div className="brand-mark-hero">
-                <img src={logoSrc} alt="spikxlabs logo" />
-              </div>
               <div className="hero-message">
-                <h2>Marketing that looks sharp and sells clearly.</h2>
+                <h1>Marketing that looks sharp and sells clearly.</h1>
                 <p>
                   We build high-converting websites, brand messaging, campaign assets, and growth systems for teams
                   that want clean design, clear strategy, and measurable momentum.
                 </p>
               </div>
+
+              <div className="hero-actions">
+                <a className="resume-link" href="#contact">
+                  Start Sprint
+                </a>
+                <div className="role-line">
+                  <span>hello@spikxlabs.com</span>
+                  <button className="copy-btn" type="button" onClick={onCopy} aria-label="Copy email address">
+                    <Copy size={16} />
+                  </button>
+                  <span className={`copy-note ${copied ? 'is-visible' : ''}`}>Copied</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-right">
+              <div className="hero-brand-card">
+                <div className="brand-mark-hero">
+                  <img src={logoSrc} alt="spikxlabs logo" />
+                </div>
+                <p>Focused marketing systems for launches, funnels, ads, and retention.</p>
+              </div>
             </div>
           </div>
 
           <div className="hero-section-row">
-            <h2>
-              <span>02</span>
-              Services<span className="period">.</span>
-            </h2>
-            <a className="resume-link" href="#contact">
-              Start Sprint
-            </a>
+            <div className="social-links" aria-label="Social links">
+              {socials.map(({ label, href, icon: Icon }) => (
+                <a href={href} key={label} aria-label={label}>
+                  <Icon size={24} />
+                </a>
+              ))}
+            </div>
+
+            <ul className="hero-stats" aria-label="spikxlabs highlights">
+              {heroStats.map((stat) => (
+                <li key={stat}>{stat}</li>
+              ))}
+            </ul>
           </div>
         </main>
       </div>
@@ -718,45 +676,12 @@ function ProcessSection() {
   )
 }
 
-function WorkExperience() {
-  return (
-    <section className="work-section" id="work">
-      <div className="content-container">
-        <div className="work-heading">
-          <RevealBlock className="number-reveal">
-            <span>06</span>
-          </RevealBlock>
-          <RevealBlock className="work-title" delay={180}>
-            <h2>Work Experience</h2>
-          </RevealBlock>
-        </div>
-
-        <div className="experience-list">
-          {workItems.map((item, index) => (
-            <RevealBlock as="article" className="experience-item" delay={index * 160} key={item.title}>
-              <p className="period-label">{item.period}</p>
-              <div className="experience-heading">
-                <h3>{item.title}</h3>
-                <div className="duration">
-                  <span className="divider">|</span>
-                  <span>{item.duration}</span>
-                </div>
-              </div>
-              <p className="experience-copy">{item.description}</p>
-            </RevealBlock>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function TestimonialsSection() {
   return (
     <section className="content-section testimonials-section">
       <div className="content-container">
         <div className="section-head">
-          <SectionTitle number="07" title="What clients say" />
+          <SectionTitle number="06" title="What clients say" />
         </div>
 
         <div className="testimonial-grid">
@@ -772,38 +697,6 @@ function TestimonialsSection() {
   )
 }
 
-function PricingSection() {
-  return (
-    <section className="content-section pricing-section">
-      <div className="content-container">
-        <div className="section-head">
-          <SectionTitle number="08" title="Sprint packages" />
-        </div>
-
-        <div className="pricing-grid">
-          {packages.map((item, index) => (
-            <RevealBlock as="article" className="pricing-card" delay={index * 120} key={item.name}>
-              <div>
-                <h3>{item.name}</h3>
-                <p>{item.bestFor}</p>
-              </div>
-              <ul>
-                {item.includes.map((included) => (
-                  <li key={included}>{included}</li>
-                ))}
-              </ul>
-              <div className="package-foot">
-                <span>{item.timeline}</span>
-                <a href="#contact">{item.cta}</a>
-              </div>
-            </RevealBlock>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0)
 
@@ -811,7 +704,7 @@ function FAQSection() {
     <section className="content-section faq-section">
       <div className="content-container">
         <div className="section-head">
-          <SectionTitle number="09" title="Questions before we start" />
+          <SectionTitle number="07" title="Questions before we start" />
         </div>
 
         <div className="faq-list">
@@ -839,7 +732,7 @@ function ContactSection() {
       <div className="content-container">
         <div className="contact-panel">
           <RevealBlock className="contact-copy">
-            <span className="card-number">10</span>
+            <span className="card-number">08</span>
             <h2>Got an idea worth sharing?</h2>
             <p>
               Tell us what you are building, what is not working, and what you want to improve. We will help you shape
@@ -960,9 +853,7 @@ function App() {
         <ServiceDetails />
         <Projects />
         <ProcessSection />
-        <WorkExperience />
         <TestimonialsSection />
-        <PricingSection />
         <FAQSection />
         <ContactSection />
         <Footer />

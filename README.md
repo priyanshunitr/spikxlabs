@@ -8,8 +8,7 @@ A Vite + React marketing agency website for spikxlabs.
 - Local `logo.jpg` used across the site and favicon
 - Sticky animated service cards
 - Filterable project section
-- Work experience/reveal section
-- Animated Matter.js footer
+- Client testimonials, FAQ, contact, and professional footer
 - Website copy source in `CONTENT.md`
 
 ## Development
